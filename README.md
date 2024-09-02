@@ -2,6 +2,8 @@
 A full-stack Java and React task management web application that allows team leaders to create and manage workspaces, assign tasks, and track progress seamlessly. This app supports role-based access, where only admins can assign and delete tasks, while users can view and complete tasks using a team code.
 
 https://github.com/user-attachments/assets/7e528aee-9f10-4851-8940-2d80e4f20928
+![BeeTasked and 2 more pages - Profile 1 - Microsoft​ Edge 5_17_2024 5_44_13 PM](https://github.com/user-attachments/assets/1719d66f-4c63-4dc5-bb86-cb7581ba36dc)
+
 
 # Features
 * Create Task Assignment Space: Admins can create a new workspace for a team, known as the "Task Assignment Space."
