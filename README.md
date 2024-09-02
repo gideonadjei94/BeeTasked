@@ -3,7 +3,15 @@ A full-stack Java and React task management web application that allows team lea
 
 ![BeeTasked and 2 more pages - Profile 1 - Microsoft​ Edge 5_17_2024 5_44_13 PM](https://github.com/user-attachments/assets/7e528aee-9f10-4851-8940-2d80e4f20928)
 ![BeeTasked and 2 more pages - Profile 1 - Microsoft​ Edge 5_17_2024 5_44_13 PM](https://github.com/user-attachments/assets/1719d66f-4c63-4dc5-bb86-cb7581ba36dc)
+https://github.com/user-attachments/assets/158ae43c-af5c-48df-bdc2-081c42724500
 
+https://github.com/user-attachments/assets/74bde0ba-0bd7-4e14-98ce-45f98a1647f5
+
+https://github.com/user-attachments/assets/9d5763a9-89ee-4cf5-94fb-3f9830b613ed
+
+https://github.com/user-attachments/assets/b88c7c88-a4b2-4ba5-97dc-b6fddc6baa0b
+
+https://github.com/user-attachments/assets/d9ee10d0-6dfa-425b-8af8-3707acde221e
 
 # Features
 * Create Task Assignment Space: Admins can create a new workspace for a team, known as the "Task Assignment Space."
