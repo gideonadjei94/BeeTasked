@@ -34,6 +34,9 @@ const Register = () => {
             <div className="cell">
               <div className="circle rotate-in-up-left"></div>
             </div>
+            <button className="bg-blue-700 text-white text-sm py-3 px-8 mt-35 border rounded-md font-normal tracking-wider uppercase w-25">
+              Login as Guest
+            </button>
           </div>
         </div>
 
