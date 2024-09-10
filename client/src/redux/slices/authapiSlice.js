@@ -12,7 +12,23 @@ export const authapiSlice = apiSlice.injectEndpoints({
         credentials: "include",
       }),
     }),
+    register: builder.mutation({
+      query: (data) => ({
+        url: `${AUTH_URL}/register`,
+        method: "POST",
+        body: data,
+        credentials: "include",
+      }),
+    }),
+    logout: builder.mutation({
+      query: (data) => ({
+        url: `${AUTH_URL}/logout`,
+        method: "POST",
+        credentials: "include",
+      }),
+    }),
   }),
 });
 
-export const { useLoginMutation } = authapiSlice;
+export const { useLoginMutation, useRegisterMutation, useLogoutMutation } =
+  authapiSlice;
