@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setCredentials } from "../redux/slices/authSlice";
 import axios from "axios";
+import { BACKEND_URL } from "../utils";
 
 const Login = ({ toggleForm }) => {
   const [name, setName] = useState("");
@@ -26,15 +27,9 @@ const Login = ({ toggleForm }) => {
   const submitHandler = async (e) => {
     e.preventDefault();
     const loginData = { name, email, role, teamCode };
-    // try {
-    //   const result = await login(data);
-    //   console.log(result);
-    // } catch (error) {
-    //   toast.error(error?.data?.message || error.message);
-    // }
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/users/login",
+        `${BACKEND_URL}/users/login`,
         loginData,
         {
           headers: {
@@ -51,10 +46,6 @@ const Login = ({ toggleForm }) => {
       toast.error("Herh Chale.." + error.message);
     }
   };
-
-  // useEffect(() => {
-  //   user && navigate("/dashboard");
-  // }, [user]);
 
   const handleSignupClick = () => {
     toggleForm();

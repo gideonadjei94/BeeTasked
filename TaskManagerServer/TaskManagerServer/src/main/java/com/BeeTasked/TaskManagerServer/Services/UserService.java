@@ -1,6 +1,7 @@
 package com.BeeTasked.TaskManagerServer.Services;
 
 import com.BeeTasked.TaskManagerServer.Repository.NoticeRepositoryImpl;
+import com.BeeTasked.TaskManagerServer.Repository.MemberRepository;
 import com.BeeTasked.TaskManagerServer.Repository.NoticeRepository;
 import com.BeeTasked.TaskManagerServer.Repository.UserRepository;
 import com.BeeTasked.TaskManagerServer.collections.Member;
@@ -21,6 +22,8 @@ import java.util.*;
 
 @Service
 public class UserService {
+    @Autowired
+    private MemberRepository memberRepository;
     @Autowired
     private JavaMailSender mailSender;
     @Autowired
@@ -64,7 +67,7 @@ public class UserService {
 
     }
 
-    public Optional<User> addUser(User user) {
+    public Optional<Object> addUser(User user) {
         try {
         Optional<User> adminLogin = userRepository.findByEmailAndTeamCode(user.getEmail(), user.getTeamCode());
         if(adminLogin.isPresent()){
@@ -76,11 +79,11 @@ public class UserService {
                 User admin = adminExists.get();
 
                 if(admin.getMembers() != null) {
+                    Member newMember = new Member();
                     boolean userExists = admin.getMembers()
                             .stream()
                             .anyMatch(m -> m.getEmail().equals(user.getEmail()));
                     if (!userExists) {
-                        Member newMember = new Member();
                         newMember.setId(UUID.randomUUID().toString());
                         newMember.setName(user.getName());
                         newMember.setEmail(user.getEmail());
@@ -92,11 +95,12 @@ public class UserService {
                         // userRepository.save(newUser);
                         admin.getMembers().add(newMember);
                         userRepository.save(admin);
+                        memberRepository.save(newMember);
 
-                        return Optional.of(admin);
+                        return Optional.of(newMember);
                     } else {
                         System.out.println("User already exists in the team");
-                        return Optional.of(admin);
+                        return Optional.of(newMember);
                     }
                 }else {
                     admin.setMembers(new ArrayList<>());
@@ -112,8 +116,8 @@ public class UserService {
                     // userRepository.save(newUser);
                     admin.getMembers().add(newMember);
                     userRepository.save(admin);
-
-                    return Optional.of(admin);
+                    memberRepository.save(newMember);
+                    return Optional.of(newMember);
                 }
             }else {
                 throw new RuntimeException("Invalid team code");

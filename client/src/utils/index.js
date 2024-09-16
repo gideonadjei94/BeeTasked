@@ -52,3 +52,5 @@ export const BGS = [
   "bg-red-600",
   "bg-green-600",
 ];
+
+export const BACKEND_URL = "http://localhost:8080/api";

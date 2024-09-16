@@ -32,7 +32,7 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody User user) {
         try {
-          Optional<User> newUser = userService.addUser(user);
+          Optional<Object> newUser = userService.addUser(user);
            return ResponseEntity.status(201).body(newUser);
         }catch (RuntimeException e) {
             return  ResponseEntity.status(400).body(e.getMessage());
