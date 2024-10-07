@@ -42,6 +42,7 @@ const SignUp = ({ toggleForm }) => {
         );
         dispatch(setCredentials(response.data));
         navigate("/");
+        toast.message("TeamCode sent to your your mail.");
       }
     } catch (error) {
       toast.error("Couldn't Register :(" + error.message);
@@ -58,7 +59,7 @@ const SignUp = ({ toggleForm }) => {
   return (
     <div className="w-full md:1/3 p-4 md:p-1 flex flex-col items-center justify-center">
       <form
-        onSubmit={handleSubmit}
+        onSubmit={submitHandler}
         className="form-container w-full md:w-[400px] flex flex-col gap-y-2 bg-white px-10 pt-8 pb-10"
       >
         <p className="text-blue-600 text-3xl font-bold text-center">
